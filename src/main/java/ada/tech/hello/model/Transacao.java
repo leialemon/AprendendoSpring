@@ -24,7 +24,11 @@ public class Transacao {
     @Column(name = "descrição", length = 255)
     private String descricao;
 
-    @Column()
+    //poderia ser @Temporal
+    @Column(name = "horário", nullable = false)
     private LocalDateTime data;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo", nullable = false)
     private TipoTransacao tipo;
 }
